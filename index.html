@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sakshi Gadhave | RPA &amp; Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F4F9;--surface:#fff;--ink:#101A33;--muted:#58617D;--line:#DCE1EC;--signal:#4F46E5;--signal-soft:#E8E7FD;--mint:#0E9F83;--mint-soft:#D9F4EC;--sun:#B7791F;--sun-soft:#FDEFD3;--rose:#D13438;--rose-soft:#FBE2E3;--display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--body:'Figtree','Segoe UI',system-ui,sans-serif;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D1120;--surface:#161B2F;--ink:#EEF1FA;--muted:#9AA3BD;--line:#283050;--signal:#9A9BFF;--signal-soft:#25295A;--mint:#34D3B0;--mint-soft:#10372F;--sun:#FFC15A;--sun-soft:#3C2F12;--rose:#FF7A7E;--rose-soft:#3F1A1C;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0D1120;--surface:#161B2F;--ink:#EEF1FA;--muted:#9AA3BD;--line:#283050;--signal:#9A9BFF;--signal-soft:#25295A;--mint:#34D3B0;--mint-soft:#10372F;--sun:#FFC15A;--sun-soft:#3C2F12;--rose:#FF7A7E;--rose-soft:#3F1A1C;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(30px,4.6vw,46px);font-weight:800;margin-bottom:12px}
+section{padding:84px 0}
+.lede{color:var(--muted);max-width:56ch;margin:0 0 40px}
+
+/* nav */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:800 20px var(--display);text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:10px;background:var(--signal);color:var(--bg);display:grid;place-items:center;font-style:normal;font-size:16px}
+nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;overflow-x:auto}
+nav ul a{display:block;padding:8px 12px;border-radius:999px;text-decoration:none;font-weight:500;font-size:15px;color:var(--muted);white-space:nowrap}
+nav ul a:hover{background:var(--signal-soft);color:var(--ink)}
+@media(max-width:760px){nav ul{display:none}}
+
+/* hero */
+.hero{padding:64px 0 40px;background:radial-gradient(900px 420px at 85% 0,var(--signal-soft),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:8px;background:var(--mint-soft);color:var(--mint);padding:6px 14px;border-radius:999px;font-weight:600;font-size:14px;margin-bottom:22px}
+.status b{width:8px;height:8px;border-radius:50%;background:var(--mint);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.25}}
+h1{font-size:clamp(48px,8vw,92px);font-weight:800}
+h1 span{display:block;color:var(--signal)}
+.role{font:500 clamp(19px,2.4vw,24px)/1.35 var(--display);margin:22px 0 14px}
+.hero p.sum{color:var(--muted);max-width:50ch;margin:0 0 28px}
+.cvnote{font-size:14px;color:var(--muted);margin:10px 0 0;min-height:1em}.btn[hidden],.links a[hidden]{display:none}.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:14px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink);cursor:pointer;font-family:var(--body);font-size:16px;background:none;color:var(--ink);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.facts div{font-size:14px;color:var(--muted)}
+.facts b{display:block;font:800 34px var(--display);color:var(--ink)}
+
+/* bot panel */
+.bot{background:var(--surface);border:1px solid var(--line);border-radius:24px;box-shadow:0 30px 60px -30px rgba(40,40,120,.35);overflow:hidden}
+.bot-top{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line);font-weight:600;font-size:15px}
+.bot-top button{background:var(--signal-soft);color:var(--signal);border:0;border-radius:999px;padding:6px 14px;font:600 13px var(--body);cursor:pointer}
+.msg{margin:18px 20px 6px;padding:12px 14px;border-radius:14px;background:var(--bg);font-size:15px;display:flex;gap:12px;align-items:center}
+.msg i{font-style:normal;font-size:22px}
+.steps{list-style:none;margin:10px 20px;padding:0}
+.steps li{display:flex;align-items:center;gap:12px;padding:9px 0;color:var(--muted);font-size:15px;position:relative;transition:color .3s}
+.steps li::before{content:"";width:22px;height:22px;border-radius:50%;border:2px solid var(--line);flex:none;transition:.3s}
+.steps li:not(:last-child)::after{content:"";position:absolute;left:10px;top:33px;height:14px;width:2px;background:var(--line)}
+.steps li.run{color:var(--ink)}
+.steps li.run::before{border-color:var(--signal);border-top-color:transparent;animation:spin .7s linear infinite}
+.steps li.done{color:var(--ink)}
+.steps li.done::before{background:var(--mint) center/12px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5l2.5 2.5L10 3' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");border-color:var(--mint)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.rec{margin:8px 20px 20px;border:1px dashed var(--line);border-radius:16px;padding:16px;opacity:.45;transition:.4s}
+.rec.live{opacity:1;border-style:solid;border-color:var(--signal)}
+.rec h4{margin:0 0 2px;font:700 18px var(--display)}
+.rec small{color:var(--muted);display:block;margin-bottom:12px}
+.chip{display:inline-block;padding:4px 12px;border-radius:999px;font-weight:600;font-size:14px;background:var(--sun-soft);color:var(--sun)}
+.chip.ok{background:var(--mint-soft);color:var(--mint)}.chip.no{background:var(--rose-soft);color:var(--rose)}
+.react{display:flex;gap:8px;margin-top:14px;align-items:center;flex-wrap:wrap}
+.react button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font:500 14px var(--body);cursor:pointer}
+.react button:disabled{opacity:.4;cursor:not-allowed}
+.react button:not(:disabled):hover{border-color:var(--signal)}
+.log{margin:0;padding:12px 20px 16px;background:var(--bg);font:13px/1.7 ui-monospace,Consolas,monospace;color:var(--muted);height:92px;overflow:hidden}
+.log div:last-child{color:var(--ink)}
+
+/* work */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:30px;display:flex;flex-direction:column;gap:14px}
+.card.wide{grid-column:1/-1;display:grid;grid-template-columns:1.2fr 1fr;gap:34px;background:var(--ink);color:var(--bg);border:0}
+.card.wide .muted,.card.wide li{color:color-mix(in srgb,var(--bg) 72%,transparent)}
+.card h3{font-size:26px;font-weight:700}
+.tools{font-size:14px;font-weight:600;color:var(--signal)}
+.card.wide .tools{color:var(--mint)}
+.card ul{margin:0;padding-left:20px;color:var(--muted);font-size:16px}
+.card li{margin-bottom:6px}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px;font-weight:600}
+.flow span{background:var(--signal-soft);color:var(--signal);padding:4px 10px;border-radius:8px}
+.flow span+span::before{content:"›";margin-right:8px;color:var(--muted);font-weight:400;position:absolute;display:none}
+.flow em{font-style:normal;color:var(--muted)}
+.card.wide .flow span{background:rgba(255,255,255,.1);color:var(--bg)}
+.result{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.result b{background:var(--mint-soft);color:var(--mint);padding:6px 12px;border-radius:10px;font-size:14px}
+.card.wide .result b{background:var(--mint);color:#06241d}
+.big{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:center}
+.big div{border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:18px}
+.big b{display:block;font:800 clamp(34px,5vw,52px) var(--display);color:var(--mint);line-height:1}
+.big span{font-size:14px;opacity:.8}
+
+/* experience */
+.tl{border-left:2px solid var(--line);padding-left:30px;margin-left:8px;position:relative}
+.tl::before{content:"";position:absolute;left:-9px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 6px var(--signal-soft)}
+.tl h3{font-size:28px}.tl .co{color:var(--signal);font-weight:600;margin:4px 0}
+.tl .when{color:var(--muted);font-size:15px;margin-bottom:14px}
+.tl ul{margin:0;padding-left:20px;max-width:70ch}.tl li{margin-bottom:8px}
+.edu{margin-top:44px;display:flex;gap:18px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px 26px;flex-wrap:wrap}
+.edu b{font:800 40px var(--display);color:var(--signal)}.edu div{flex:1;min-width:220px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.sk h3{font-size:20px;margin-bottom:12px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills span{padding:7px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-weight:500;font-size:15px;transition:.15s}
+.pills span:hover{background:var(--signal);color:var(--bg);border-color:var(--signal)}
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.cert{background:var(--sun-soft);color:var(--ink);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:8px;font-weight:600}
+.cert i{font-style:normal;font-size:26px}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bg);border-radius:32px;padding:clamp(32px,6vw,72px);margin-bottom:40px}
+.contact h2{font-size:clamp(36px,6vw,68px)}
+.contact p{opacity:.75;max-width:48ch}
+.mail{display:inline-block;margin:18px 0 26px;font:700 clamp(20px,3.6vw,34px) var(--display);text-decoration:underline;text-decoration-color:var(--mint);text-underline-offset:8px;word-break:break-all}
+.links{display:flex;flex-wrap:wrap;gap:12px}
+.links a{border:1.5px solid rgba(255,255,255,.3);padding:10px 18px;border-radius:12px;text-decoration:none;font-weight:600}
+.links a:hover{background:var(--bg);color:var(--ink)}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:0 0 40px}
+
+@media(max-width:900px){.hero .wrap,.card.wide{grid-template-columns:1fr}.hero .wrap{gap:36px}}
+@media(max-width:700px){.grid,.skills,.certs{grid-template-columns:1fr}section{padding:60px 0}.wrap{padding:0 18px}.card{padding:22px}.card.wide{gap:24px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#top"><i>S</i>Sakshi Gadhave</a>
+<ul><li><a href="#work">Work</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul>
+</nav></div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+<div>
+<div class="status"><b></b>Open to Software &amp; Automation roles</div>
+<h1>Sakshi<span>Gadhave</span></h1>
+<p class="role">I build bots that do the boring work, and web apps people enjoy using.</p>
+<p class="sum">RPA developer with 1 year of enterprise experience in Automation Anywhere A360, UiPath and Power Automate, plus full-stack skills in React, Node.js and MongoDB. My automations cut manual effort by up to 85%.</p>
+<div class="btns"><a class="btn primary" href="#work">See my work</a><a class="btn" href="#contact">Hire me</a><a class="btn" href="Sakshi_Gadhave_Resume.pdf" download>Download resume</a></div>
+<div class="facts"><div><b>85%</b>less recruiter effort</div><div><b>40%</b>faster hiring</div><div><b>9.38</b>CGPA, B.Tech CSE</div></div>
+</div>
+
+<div class="bot" aria-label="Live demo of my Slack to Salesforce recruitment bot">
+<div class="bot-top"><span>Recruitment bot, live demo</span><button id="replay" type="button">Run again</button></div>
+<div class="msg"><i>📄</i><span><b>Riya_Sharma_Resume.pdf</b> was posted in #hiring</span></div>
+<ol class="steps" id="steps">
+<li>Pick up resume from Slack</li><li>Extract fields with IDP</li><li>Match skills to the job</li><li>Check for duplicates</li><li>Create Salesforce record</li>
+</ol>
+<div class="rec" id="rec"><h4>Riya Sharma</h4><small>Java, React, SQL · 94% skill match</small>
+<span class="chip" id="chip">New</span>
+<div class="react" id="react"><span style="font-size:14px;color:var(--muted)">You’re the recruiter. React:</span>
+<button data-s="ok" disabled>✅ Shortlist</button><button data-s="hold" disabled>⏸️ On hold</button><button data-s="no" disabled>❌ Reject</button></div></div>
+<div class="log" id="log"></div>
+</div>
+</div></section>
+
+<section id="work"><div class="wrap">
+<h2>Work I’m proud of</h2>
+<p class="lede">Four projects. Each one started with a slow, manual process and ended with a number I could measure.</p>
+<div class="grid">
+<article class="card wide">
+<div style="display:flex;flex-direction:column;gap:14px">
+<h3>Slack–Salesforce Intelligent Recruitment Automation</h3>
+<div class="tools">Automation Anywhere A360 · Slack API · Salesforce API · IDP</div>
+<div class="flow"><span>Slack resume</span><span>IDP extraction</span><span>Skill match</span><span>Salesforce record</span></div>
+<ul><li>End-to-end pipeline with duplicate checks before any record is created.</li><li>Recruiters shortlist, reject or hold a candidate with a Slack emoji. Salesforce updates instantly. (Try it in the demo above.)</li></ul>
+</div>
+<div class="big"><div><b>85%</b><span>less recruiter effort</span></div><div><b>40%</b><span>faster time-to-hire</span></div><div style="grid-column:1/-1"><b>0</b><span>duplicate entries</span></div></div>
+</article>
+
+<article class="card">
+<h3>UiPath Intelligent Invoice Processing</h3>
+<div class="tools">UiPath · Document Understanding · IXP</div>
+<div class="flow"><span>Ingest</span><span>Classify</span><span>Extract</span><span>Validate</span><span>Excel</span></div>
+<ul><li>Low-confidence fields go to a human reviewer instead of failing silently.</li></ul>
+<div class="result"><b>40% less manual effort</b><b>0 unhandled exceptions</b></div>
+</article>
+
+<article class="card">
+<h3>Control Room Credential Manager</h3>
+<div class="tools">Power Automate · Forms · SharePoint · Teams · Outlook</div>
+<div class="flow"><span>Request</span><span>Validate</span><span>Allocate</span><span>Notify</span></div>
+<ul><li>Cloud tool for requests and allocations, checked against system-of-record data.</li></ul>
+<div class="result"><b>90–95% fewer conflicts</b><b>80–85% fewer follow-ups</b></div>
+</article>
+
+<article class="card">
+<h3>MelodyMusic</h3>
+<div class="tools">MERN stack · Tailwind CSS</div>
+<div class="flow"><span>Upload cover</span><span>Get discovered</span><span>Community</span></div>
+<ul><li>Singers upload song covers. Listeners find new voices without needing Instagram or YouTube.</li><li>Responsive interface built with React Hooks and Tailwind.</li></ul>
+</article>
+
+<article class="card" style="background:var(--signal-soft);border-color:transparent">
+<h3>Beyond bots</h3>
+<p class="muted" style="margin:0;color:var(--muted)">I connect Microsoft Forms, SharePoint and Outlook with REST APIs and JSON, so approvals, data collection and alerts run without anyone chasing them. I also deliver Invoice Processing, Web Data Extraction and Data Entry across Excel, Web, PDF and Email.</p>
+</article>
+</div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+<h2>Experience</h2>
+<p class="lede">From requirements to production support, I own the whole life of a bot.</p>
+<div class="tl">
+<h3>RPA Developer</h3>
+<div class="co">Xalta Technologies Pvt. Ltd., Pune</div>
+<div class="when">July 2025 – July 2026</div>
+<ul>
+<li>Gathered requirements and built enterprise workflows in Automation Anywhere A360, UiPath and Power Automate.</li>
+<li>Delivered invoice processing, web data extraction and data entry automations across Excel, Web, PDF and Email.</li>
+<li>Built Microsoft Forms, SharePoint and Outlook integrations using REST APIs and JSON.</li>
+<li>Handled testing, UAT, deployment, exception handling and production support. Maintained A360 Bot Runner and Control Room setups.</li>
+<li>Worked with developers and business teams to fix issues, document processes and improve workflows.</li>
+</ul></div>
+<div class="edu"><b>9.38</b><div><strong>B.Tech, Computer Science &amp; Engineering</strong><br><span style="color:var(--muted)">JSPM’s Rajarshi Shahu College of Engineering, Pune · Jan 2021 – Jun 2025</span></div></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Toolbox</h2>
+<p class="lede">Automation is the core. Full-stack is how I build the interfaces around it.</p>
+<div class="skills">
+<div class="sk"><h3>Automation &amp; RPA</h3><div class="pills"><span>Automation Anywhere A360</span><span>UiPath</span><span>Power Automate</span><span>Excel VBA / Macros</span><span>REST API integration</span></div></div>
+<div class="sk"><h3>Languages &amp; fundamentals</h3><div class="pills"><span>Java</span><span>C++</span><span>JavaScript</span><span>SQL</span><span>HTML</span><span>CSS</span><span>OOP</span><span>DSA</span></div></div>
+<div class="sk"><h3>Frameworks &amp; libraries</h3><div class="pills"><span>React</span><span>Redux Toolkit</span><span>Node.js</span><span>Express.js</span><span>Tailwind CSS</span></div></div>
+<div class="sk"><h3>Databases</h3><div class="pills"><span>MySQL</span><span>MongoDB</span><span>Excel as a database</span></div></div>
+</div>
+<div class="certs">
+<div class="cert"><i>🏅</i>UiPath Certified Professional Automation Developer</div>
+<div class="cert"><i>🎓</i>UiPath Automation Developer Associate</div>
+<div class="cert"><i>🛠️</i>UiPath Certified Professional Infrastructure Engineer (Standalone)</div>
+</div>
+</div></section>
+
+<section id="contact" style="padding-top:20px"><div class="wrap"><div class="contact">
+<h2>Have a process that eats hours?</h2>
+<p>I’m looking for a Software or Automation Engineering role. Send me the task you’d love to never do again.</p>
+<a class="mail" href="mailto:sakshigadhave1403@gmail.com">sakshigadhave1403@gmail.com</a>
+<div class="links"><a href="Sakshi_Gadhave_Resume.pdf" download>Download resume</a><a href="tel:+917385359071">+91 73853 59071</a><a href="https://www.linkedin.com/in/sakshi-gadhave-0ab185238" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/sakshigadhave1403" target="_blank" rel="noopener">GitHub</a><a href="#top">Pune, India</a></div>
+</div></div></section>
+</main>
+<footer>© 2026 Sakshi Gadhave</footer>
+
+<script>
+(function(){
+var steps=[].slice.call(document.querySelectorAll('#steps li')),
+log=document.getElementById('log'),rec=document.getElementById('rec'),chip=document.getElementById('chip'),
+btns=[].slice.call(document.querySelectorAll('#react button')),timers=[];
+var lines=['Resume picked up from #hiring','Fields extracted: name, skills, experience','Skills matched to open role: 94%','No duplicate found in Salesforce','Candidate record created in Salesforce'];
+function say(t){var d=document.createElement('div');d.textContent='> '+t;log.appendChild(d);while(log.children.length>4)log.removeChild(log.firstChild)}
+function reset(){timers.forEach(clearTimeout);timers=[];log.innerHTML='';steps.forEach(function(s){s.className=''});rec.className='rec';chip.className='chip';chip.textContent='New';btns.forEach(function(b){b.disabled=true})}
+function run(){reset();say('Bot started');
+steps.forEach(function(s,i){
+timers.push(setTimeout(function(){s.className='run'},i*900+300));
+timers.push(setTimeout(function(){s.className='done';say(lines[i]);
+if(i===steps.length-1){rec.classList.add('live');btns.forEach(function(b){b.disabled=false});say('Waiting for a Slack reaction')}},i*900+1000));
+});}
+btns.forEach(function(b){b.addEventListener('click',function(){
+var s=b.dataset.s,m={ok:['Shortlisted','ok'],hold:['On hold',''],no:['Rejected','no']}[s];
+chip.textContent=m[0];chip.className='chip '+m[1];say('Reaction received. Salesforce status: '+m[0])})});
+document.getElementById('replay').addEventListener('click',run);
+run();
+})();
+
+</script>
+</body>
+</html>
